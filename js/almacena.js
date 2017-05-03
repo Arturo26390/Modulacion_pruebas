@@ -22,7 +22,7 @@ var almacena = {
 	},
 	tablaPendientes: function(tx){
 		// CREAR TABLA DE HISTORIAL
-		tx.executeSql('CREATE TABLE IF NOT EXISTS Pendientes (id INTEGER PRIMARY KEY, usuario, informacion, estado)');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS Pendientes (id INTEGER, usuario, informacion, estado, primary key(id,informacion))');
 
 		// INSERTAR LOS DATOS
 		tx.executeSql('INSERT INTO Pendientes (usuario, informacion, estado) VALUES ("'+almacena.usuario+'", "'+almacena.informacion+'", "'+almacena.estado+'")');
@@ -39,7 +39,7 @@ var almacena = {
 		tx.executeSql('CREATE TABLE IF NOT EXISTS Pendientes (id INTEGER PRIMARY KEY,  usuario, informacion, estado)');
 
 		// LEER DEL HISTORIAL
-		tx.executeSql('SELECT * FROM Pendientes', [], almacena.mostrarResultadosPendientes, null);
+		tx.executeSql('SELECT * FROM Pendientes WHERE usuario="'+window.localStorage.getItem("nombreUsuario")+'"', [], almacena.mostrarResultadosPendientes, null);
 	},
 
 	mostrarResultadosPendientes: function(tx, res){

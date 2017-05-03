@@ -23,7 +23,6 @@ var fn = {
 		almacena.cargarDatosPendientes();
 	},
 	
-	
 	onBackKeyDown: function(){
 		// Handle the back button
 		
