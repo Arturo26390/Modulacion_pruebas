@@ -15,7 +15,15 @@ var fn = {
 		$("#botonCerrarSesion").tap(fn.cerrarSesion);
 		document.addEventListener("backbutton", fn.onBackKeyDown, false);
 		//window.localStorage.setItem("nombreUsuario", "adominguez");
+		$("#botonHistorial").tap(fn.mostrarHistorial);
 	},
+	
+	mostrarHistorial : function()
+	{
+		almacena.cargarDatosPendientes();
+	},
+	
+	
 	onBackKeyDown: function(){
 		// Handle the back button
 		

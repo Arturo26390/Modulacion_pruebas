@@ -26,6 +26,7 @@ var almacena = {
 
 		// INSERTAR LOS DATOS
 		tx.executeSql('INSERT INTO Pendientes (usuario, informacion, estado) VALUES ("'+almacena.usuario+'", "'+almacena.informacion+'", "'+almacena.estado+'")');
+		bcs.abrirCamara();
 	},
 
 	cargarDatosPendientes: function(){
