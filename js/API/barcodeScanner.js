@@ -8,8 +8,11 @@ var bcs = {
 					//alert("Datos Obtenidos\n" +
 					//		"Result: " + result.text);
 					if(networkInfo.estaConectado() == false){
-						window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
+						window.plugins.toast.show("No existe conexión a internet, Datos almacenados localmente", 'long', 'center');
 						//alert("No existe conexión a internet, revisela e intente de nuevo");
+					
+					almacena.guardaPedimento(window.localStorage.getItem("nombreUsuario"),result.text,"");
+		
 					}else{
 						fn.enviarRegistro(result.text);
 					}

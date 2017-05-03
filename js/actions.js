@@ -54,7 +54,6 @@ var fn = {
 		//alert("Nombre: "+nombreR+" Email: "+emailR+" Telefono: "+telefonoR+" Password: "+passwordR+" Foto: "+fotoR);
 		if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
-			//alert("No existe conexión a internet, revisela e intente de nuevo");
 		}else{
 			$.ajax({
 				method: "POST",
