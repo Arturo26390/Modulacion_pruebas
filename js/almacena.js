@@ -7,15 +7,8 @@ var almacena = {
 		return window.openDatabase("Modulacion", "1.0", "Modulacion", 200000);
 	},
 	error: function(error){
-		if(error.message.indexOf("1555 UNIQUE constraint failed")>-1);
-		{
-			window.plugins.toast.show("El registro ya existe", 'long', 'center');
-			alert("El registro ya existe");
-		}
-		else
-		{
-			alert("Error: "+error.message);
-		}
+		
+		//alert("Error: "+error.message);
 	},
 	exito: function(){
 		//alert("Exito");
